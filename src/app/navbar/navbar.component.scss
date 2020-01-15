@@ -1,0 +1,37 @@
+p,
+li,
+nav,
+.logo,
+.imageHolder {
+  display: inline-block;
+}
+
+li {
+  font-size: 1.8rem;
+  margin-left: 40px;
+}
+
+header {
+  background-color: white;
+}
+
+.logo {
+  font-size: 2rem;
+  font-family: sans-serif;
+  padding: 20px 0;
+
+  .imageHolder {
+    height: 1.65rem;
+    width: 1.65rem;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

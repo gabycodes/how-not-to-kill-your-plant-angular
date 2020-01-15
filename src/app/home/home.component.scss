@@ -1,0 +1,53 @@
+.row {
+  min-height: 55vh;
+  display: flex;
+}
+
+h2 span {
+  color: #F17469;
+}
+
+.imageHolder,
+.content {
+  width: 50%;
+}
+
+.imageHolder {
+  background-size: cover;
+  background-position: center;
+}
+
+.content {
+  padding: 80px;
+  line-height: 2.8rem;
+}
+
+.row:first-of-type .content,
+.row:nth-of-type(3) .content {
+  padding-left: 13%;
+}
+
+.row:nth-of-type(2) .content {
+  padding-right: 13%;
+}
+
+.row:first-of-type,
+.row:nth-of-type(3) {
+  background-color: #FAF7F2;
+}
+
+.row:nth-of-type(2) {
+  background-color: #FB9086;
+
+  .imageHolder {
+    background-image: url("https://res.cloudinary.com/gabycodes-/image/upload/c_scale,w_1001/v1557286849/how-not-to-kill-your-plants/emily-rudolph-543369-unsplash.jpg");
+  }
+}
+
+.row:first-of-type .imageHolder {
+  background-image: url("https://res.cloudinary.com/gabycodes-/image/upload/c_scale,w_1534/v1557286749/how-not-to-kill-your-plants/katya-austin-554633-unsplash.jpg");
+}
+
+.row:nth-of-type(3) .imageHolder {
+  background-image: url("https://res.cloudinary.com/gabycodes-/image/upload/c_scale,w_1240/v1554819948/how-not-to-kill-your-plants/julie-johnson-719955-unsplash.jpg");
+}

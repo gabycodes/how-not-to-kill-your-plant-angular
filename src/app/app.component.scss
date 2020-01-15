@@ -1,0 +1,45 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  color: rgb(17, 17, 17);
+}
+
+body {
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+a {
+  color: rgb(17, 17, 17);
+}
+
+.wrapper {
+  width: 74%;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+  display: inline-block;
+}
+
+.imageHolder {
+  display: inline-block;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Playfair Display", serif;
+}
+
+h2 {
+  font-size: 3.5rem;
+  line-height: 4rem;
+}
