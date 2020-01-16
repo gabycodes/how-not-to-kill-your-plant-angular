@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { BasicButtonComponent } from './basic-button/basic-button.component';
 import { FooterComponent } from './footer/footer.component';
 import { SearchPlantsComponent } from './search-plants/search-plants.component';
+import { PlantCardComponent } from './plant-card/plant-card.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { SearchPlantsComponent } from './search-plants/search-plants.component';
     HomeComponent,
     BasicButtonComponent,
     FooterComponent,
-    SearchPlantsComponent
+    SearchPlantsComponent,
+    PlantCardComponent
   ],
   imports: [
     BrowserModule,
