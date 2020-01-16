@@ -16,18 +16,16 @@ header {
 }
 
 .logo {
-  font-size: 2rem;
-  font-family: sans-serif;
   padding: 25px 0;
 
+  p {
+    font-size: 2rem;
+    font-family: "Open", sans-serif;
+  }
   .imageHolder {
     height: 1.65rem;
     width: 1.65rem;
   }
-}
-
-a {
-  text-decoration: none;
 }
 
 .wrapper {

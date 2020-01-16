@@ -1,0 +1,44 @@
+.searchPlants {
+  background-color: #FAF7F2;
+  min-height: calc(100vh - 219px);
+  border: 1px solid transparent;
+  text-align: center;
+  padding: 30px;
+}
+
+input {
+  font-size: 1.6rem;
+  padding: 15px 20px;
+  width: 80%;
+  border: none;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.11);
+  margin: 30px;
+}
+
+input::placeholder {
+  text-align: center;
+  color: grey;
+}
+
+h3 {
+  position: relative;
+  display: inline-block;
+}
+
+h3::before,
+h3::after {
+  position: absolute;
+  content: '';
+  height: 1px;
+  width: 180px;
+  background-color: #292522;
+  top: 50%;
+}
+
+h3::before {
+  right: 133%;
+}
+
+h3::after {
+  left: 133%;
+}

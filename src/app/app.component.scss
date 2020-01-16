@@ -16,6 +16,10 @@ a {
   color: #292522;
 }
 
+a {
+  text-decoration: none;
+}
+
 .wrapper {
   width: 74%;
   max-width: 1300px;
@@ -37,6 +41,11 @@ h2,
 h3,
 h4 {
   font-family: "Playfair Display", serif;
+}
+
+p {
+  font-size: 1.6rem;
+  font-family: "Open Sans", sans-serif;
 }
 
 h2 {
