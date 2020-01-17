@@ -3,13 +3,10 @@ li {
   transition: all 0.1s ease-in;
 }
 
-li:hover,
-li:focus {
+a:hover,
+a:focus {
   transform: scale(1.01);
-
-  a {
-    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
-  }
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
 }
 
 a {

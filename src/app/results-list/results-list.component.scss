@@ -2,11 +2,6 @@ ul {
   padding: 0;
 }
 
-input::placeholder {
-  text-align: center;
-  color: grey;
-}
-
 h3 {
   position: relative;
   display: inline-block;
@@ -19,7 +14,7 @@ h3::after {
   height: 1px;
   width: 180px;
   background-color: #292522;
-  top: 50%;
+  top: 53%;
 }
 
 h3::before {
