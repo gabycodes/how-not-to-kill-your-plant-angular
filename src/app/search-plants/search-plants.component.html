@@ -2,14 +2,6 @@
   <div class="wrapper">
     <h2>Plant Database</h2>
     <input type="text" placeholder="Type here to search">
-    <div class="results">
-      <h3>Results</h3>
-      <ul>
-        <app-plant-card
-          *ngFor="let plant of plants"
-          [plant]="plant"
-        ></app-plant-card>
-      </ul>
-    </div>
+    <app-results-list [plants]='plants'></app-results-list>
   </div>
 </div>

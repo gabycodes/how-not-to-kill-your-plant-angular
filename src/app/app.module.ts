@@ -10,6 +10,7 @@ import { BasicButtonComponent } from './basic-button/basic-button.component';
 import { FooterComponent } from './footer/footer.component';
 import { SearchPlantsComponent } from './search-plants/search-plants.component';
 import { PlantCardComponent } from './plant-card/plant-card.component';
+import { ResultsListComponent } from './results-list/results-list.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { PlantCardComponent } from './plant-card/plant-card.component';
     BasicButtonComponent,
     FooterComponent,
     SearchPlantsComponent,
-    PlantCardComponent
+    PlantCardComponent,
+    ResultsListComponent
   ],
   imports: [
     BrowserModule,
