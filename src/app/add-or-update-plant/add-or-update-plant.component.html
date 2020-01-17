@@ -1,0 +1,52 @@
+<div class="addPlant"> 
+  <h2>Add Plant</h2>
+  <div class="imageHolder">
+    
+  </div>
+  <form [formGroup]="plantForm" (ngSubmit)="onSubmit()">
+    <!-- <legend>{{ formTitle }}</legend> -->
+    <div class="form-group">
+      <label>Name</label>
+      <input
+        type="text"
+        [formControlName]="'name'"
+        class="form-control"
+        placeholder="Enter Name"
+      />
+    </div>
+    <div class="form-group">
+      <label>Latin Name</label>
+      <input
+        type="text"
+        [formControlName]="'latinName'"
+        class="form-control"
+        placeholder="Enter Latin Name"
+      />
+    </div>
+    <div class="form-group">
+      <label>Description</label>
+      <textarea
+        type="number"
+        [formControlName]="'description'"
+        class="form-control"
+        placeholder="Enter Description"
+      ></textarea>
+    </div>
+    <div class="form-group">
+      <label>Image Url</label>
+      <input
+        type="text"
+        [formControlName]="'imageUrl'"
+        class="form-control"
+        placeholder="Enter Image URL"
+      />
+    </div>
+    <button
+      [disabled]="!plantForm.valid"
+      type="submit"
+      class="btn btn-primary"
+    >
+      Add Plant
+    </button>
+  </form>
+</div>  

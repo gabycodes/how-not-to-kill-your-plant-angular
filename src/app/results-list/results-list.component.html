@@ -1,7 +1,7 @@
 <div class="results">
   <h3>Results</h3>
   <ul 
-    *ngIf='plants.length > 0'
+    *ngIf='plants && plants.length > 0'
   >
     <app-plant-card
       *ngFor="let plant of plants"
@@ -10,6 +10,6 @@
   </ul>
   <p 
     class="noResults"
-    *ngIf="plants.length === 0"
+    *ngIf="plants && plants.length === 0"
   >No matches found for that query :(</p>
 </div>

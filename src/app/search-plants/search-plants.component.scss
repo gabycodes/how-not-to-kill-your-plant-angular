@@ -4,6 +4,7 @@
   border: 1px solid transparent;
   text-align: center;
   padding: 30px;
+  position: relative;
 }
 
 input {
@@ -20,4 +21,20 @@ input {
 input::placeholder {
   text-align: center;
   color: rgb(145, 145, 145);
+}
+
+.addNewPlant {
+  font-size: 5rem;
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #968B78;
+  transition: all 0.1s ease-in;
+}
+
+.addNewPlant:hover,
+.addNewPlant:focus {
+  transform: scale(1.1);
 }

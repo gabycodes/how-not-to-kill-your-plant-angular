@@ -3,5 +3,10 @@
     <h2>Plant Database</h2>
     <input type="text" placeholder="Type here to search" [(ngModel)]='query' (input)='onChange()'>
     <app-results-list [plants]='filteredPlants'></app-results-list>
+    <button 
+      class="addNewPlant"
+      routerLink="/add" 
+      routerLinkActive="active"  
+    ><i class="far fa-plus-square"></i></button>
   </div>
 </div>
