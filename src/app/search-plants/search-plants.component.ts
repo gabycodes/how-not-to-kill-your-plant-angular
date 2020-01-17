@@ -9,12 +9,19 @@ import { Plant } from "../models/plant.model";
 })
 export class SearchPlantsComponent implements OnInit {
   plants: Plant[] = []
+  query: string = ''
+  filteredPlants: Plant[]
+
   constructor(private plantService: PlantsService) { }
 
   ngOnInit() {
     this.plantService.getPlants().subscribe(plants => {
       this.plants = plants;
-      console.log(this.plants)
+      this.filteredPlants = plants;
     })
+  }
+
+  onChange() {
+    this.filteredPlants = this.plants.filter(plant => plant.name.toLowerCase().includes(this.query.toLowerCase()))
   }
 }

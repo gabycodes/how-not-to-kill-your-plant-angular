@@ -1,11 +1,25 @@
 li {
   list-style: none;
+  transition: all 0.1s ease-in;
+}
+
+li:hover,
+li:focus {
+  transform: scale(1.01);
+
+  a {
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+  }
+}
+
+a {
   background-color: white;
   padding: 30px;
   display: flex;
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.11);
   max-width: 600px;
   margin: 0 auto 30px;
+  transition: all 0.1s ease-in;
 }
 
 .imageHolder {
@@ -21,7 +35,7 @@ li {
   flex-shrink: 1;
   height: 120px;
   overflow: hidden;
-  text-overflow: ellipsis; 
+  text-overflow: ellipsis;
 }
 
 .latin {

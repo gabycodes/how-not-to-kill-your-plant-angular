@@ -8,13 +8,9 @@ import { Plant } from '../models/plant.model'
 })
 export class ResultsListComponent implements OnInit {
   @Input() plants: Plant[]
-  // passedPlants = []
 
   constructor() { }
 
-  ngOnInit() {
-    // this.passedPlants = this.plants
-    console.log('%%%', this.plants)
-  }
+  ngOnInit() { }
 
 }

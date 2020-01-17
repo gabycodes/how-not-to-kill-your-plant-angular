@@ -1,7 +1,7 @@
 <div class="searchPlants">
   <div class="wrapper">
     <h2>Plant Database</h2>
-    <input type="text" placeholder="Type here to search">
-    <app-results-list [plants]='plants'></app-results-list>
+    <input type="text" placeholder="Type here to search" [(ngModel)]='query' (input)='onChange()'>
+    <app-results-list [plants]='filteredPlants'></app-results-list>
   </div>
 </div>
