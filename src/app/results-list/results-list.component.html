@@ -1,9 +1,15 @@
 <div class="results">
   <h3>Results</h3>
-  <ul>
+  <ul 
+    *ngIf='plants.length > 0'
+  >
     <app-plant-card
       *ngFor="let plant of plants"
       [plant]="plant"
     ></app-plant-card>
   </ul>
+  <p 
+    class="noResults"
+    *ngIf="plants.length === 0"
+  >No matches found for that query :(</p>
 </div>

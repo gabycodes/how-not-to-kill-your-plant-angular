@@ -10,11 +10,11 @@ input {
   font-size: 1.6rem;
   text-align: center;
   padding: 18px 20px;
-  width: 85%;
+  width: 100%;
   max-width: 700px;
   border: none;
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.11);
-  margin: 30px;
+  margin: 30px auto;
 }
 
 input::placeholder {
