@@ -6,6 +6,15 @@
   <form [formGroup]="plantForm" (ngSubmit)="onSubmit()">
     <!-- <legend>{{ formTitle }}</legend> -->
     <div class="form-group">
+      <label>Id</label>
+      <input
+        type="text"
+        [formControlName]="'id'"
+        class="form-control"
+        placeholder="Enter Id"
+      />
+    </div>
+    <div class="form-group">
       <label>Name</label>
       <input
         type="text"

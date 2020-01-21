@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormArray, Validators } from "@angular/forms";
 import { PlantsService } from '../plants.service'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-or-update-plant',
@@ -9,18 +10,16 @@ import { PlantsService } from '../plants.service'
 })
 export class AddOrUpdatePlantComponent implements OnInit {
   plantForm: FormGroup;
-  // selectedMovieId = null;
-  // editMode = false;
-  // formTitle: string = "Add New Movie";
 
-  constructor(private plantService: PlantsService) { }
+  constructor(private plantService: PlantsService, private router: Router) { }
 
   ngOnInit() {
     this.plantForm = new FormGroup({
-      name: new FormControl('', Validators.required),
-      latinName: new FormControl('', Validators.required),
-      description: new FormControl('', Validators.required),
-      imageUrl: new FormControl('', Validators.required),
+      id: new FormControl(null, Validators.required),
+      name: new FormControl(null, Validators.required),
+      latinName: new FormControl(null, Validators.required),
+      description: new FormControl(null, Validators.required),
+      imageUrl: new FormControl(null, Validators.required),
     });
   }
 
@@ -29,10 +28,16 @@ export class AddOrUpdatePlantComponent implements OnInit {
       name,
       latinName,
       description,
-      imageUrl
+      imageUrl,
+      id
     } = this.plantForm.value;
 
     console.log(this.plantForm.value)
+
+    console.log("adding plant");
+    this.plantService.addPlant({ id, name, latinName, description, imageUrl }).subscribe();
+
+    this.router.navigate(['/search'])
   }
 
 }

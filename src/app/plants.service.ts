@@ -13,4 +13,10 @@ export class PlantsService {
     return this.http.get<Plant[]>(
       "https://how-not-to-kill-your-plant.firebaseio.com/plants.json"
   ); }
+
+  addPlant(plant: Plant) {
+    return this.http.post("https://how-not-to-kill-your-plant.firebaseio.com/plants.json", {
+      ...plant
+    })
+  }
 }
