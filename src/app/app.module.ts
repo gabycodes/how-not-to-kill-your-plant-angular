@@ -14,6 +14,8 @@ import { PlantCardComponent } from './plant-card/plant-card.component';
 import { ResultsListComponent } from './results-list/results-list.component';
 import { AddOrUpdatePlantComponent } from './add-or-update-plant/add-or-update-plant.component';
 
+import { PlantsService } from './plants.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +35,7 @@ import { AddOrUpdatePlantComponent } from './add-or-update-plant/add-or-update-p
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [PlantsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

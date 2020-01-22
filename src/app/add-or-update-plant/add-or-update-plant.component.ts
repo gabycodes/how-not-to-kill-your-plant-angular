@@ -13,6 +13,11 @@ export class AddOrUpdatePlantComponent implements OnInit {
 
   constructor(private plantService: PlantsService, private router: Router) { }
 
+  Repdata = {}
+  errorMessage = ''
+  buttonValue = 'Save'
+  updatePlantValues = {}
+
   ngOnInit() {
     this.plantForm = new FormGroup({
       id: new FormControl(null, Validators.required),
@@ -21,6 +26,9 @@ export class AddOrUpdatePlantComponent implements OnInit {
       description: new FormControl(null, Validators.required),
       imageUrl: new FormControl(null, Validators.required),
     });
+
+    this.plantService.getPlant().subscribe(data => console.log(data))
+
   }
 
   onSubmit() {
@@ -32,12 +40,31 @@ export class AddOrUpdatePlantComponent implements OnInit {
       id
     } = this.plantForm.value;
 
+    const plant = {
+      name,
+      latinName,
+      description,
+      imageUrl,
+      id
+    }
     console.log(this.plantForm.value)
 
     console.log("adding plant");
-    this.plantService.addPlant({ id, name, latinName, description, imageUrl }).subscribe();
+    // this.plantService.addPlant({ id, name, latinName, description, imageUrl }).subscribe();
 
-    this.router.navigate(['/search'])
+    this.plantService.savePlant(plant).subscribe(data => {
+      alert(data)
+      this.ngOnInit()
+    }, error => this.errorMessage = error)
+    // this.router.navigate(['/search'])
   }
 
+  updatePlant(values) {
+    this.updatePlantValues = { ...values }
+    this.buttonValue = 'Update'
+  }
+
+  // deletePlant(id) {
+  //   this.plantService.
+  // }
 }
