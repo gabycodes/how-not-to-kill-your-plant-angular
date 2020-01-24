@@ -11,11 +11,12 @@ export class PlantsService {
 
   getPlants(): Observable<Plant[]> {
     return this.http.get<Plant[]>(
-      "https://how-not-to-kill-your-plant.firebaseio.com/plants.json"
+      // "https://how-not-to-kill-your-plant.firebaseio.com/plants.json"
+      "http://localhost:8080/plants"
   ); }
 
   addPlant(plant: Plant) {
-    return this.http.post("https://how-not-to-kill-your-plant.firebaseio.com/plants.json", {
+    return this.http.post("http://localhost:8080/plants", {
       ...plant
     })
   }
@@ -24,12 +25,12 @@ export class PlantsService {
   
   savePlant(plant: Plant) {
     console.log('saving plant...')
-    return this.http.post('http://localhost:8080/save-plant/', plant)
+    return this.http.post('http://localhost:8080/plants', plant)
   }
   
-  getPlant() {
+  getPlant(id) {
     console.log('getting plants?')
-    return this.http.get('http://localhost:8080/plants')
+    return this.http.get('http://localhost:8080/plants/:id')
   }
   
   // deletePlant(id: string) {

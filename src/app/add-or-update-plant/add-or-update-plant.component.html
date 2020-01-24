@@ -1,62 +1,68 @@
-<div class="addPlant"> 
-  <h2>Add Plant</h2>
-  <div class="imageHolder">
+<div class="addPlant">
+  <div class="image">
+    <div class="imageHolder">
+      <img *ngIf="hasImgUrl" src="{{ plantForm.value.imgUrl }}" alt="">
+      <img *ngIf="!hasImgUrl" src="https://cdn11.bigcommerce.com/s-gho61/stencil/31cc7cb0-5035-0136-2287-0242ac11001b/e/3dad8ea0-5035-0136-cda0-0242ac110004/images/no-image.svg" alt="">
+    </div>
   
   </div>
-  
-  <form [formGroup]="plantForm" (ngSubmit)="onSubmit()">
-    <!-- <legend>{{ formTitle }}</legend> -->
-    <div class="form-group">
-      <label>Id</label>
-      <input
-        type="text"
-        [formControlName]="'id'"
-        class="form-control"
-        placeholder="Enter Id"
-      />
-    </div>
-    <div class="form-group">
-      <label>Name</label>
-      <input
-        type="text"
-        [formControlName]="'name'"
-        class="form-control"
-        placeholder="Enter Name"
-      />
-    </div>
-    <div class="form-group">
-      <label>Latin Name</label>
-      <input
-        type="text"
-        [formControlName]="'latinName'"
-        class="form-control"
-        placeholder="Enter Latin Name"
-      />
-    </div>
-    <div class="form-group">
-      <label>Description</label>
-      <textarea
-        type="number"
-        [formControlName]="'description'"
-        class="form-control"
-        placeholder="Enter Description"
-      ></textarea>
-    </div>
-    <div class="form-group">
-      <label>Image Url</label>
-      <input
-        type="text"
-        [formControlName]="'imageUrl'"
-        class="form-control"
-        placeholder="Enter Image URL"
-      />
-    </div>
-    <button
-      [disabled]="!plantForm.valid"
-      type="submit"
-      class="btn btn-primary"
-    >
-      Add Plant
-    </button>
-  </form>
+  <div class="content">
+    <h2>Add Plant</h2>
+    <form [formGroup]="plantForm" (ngSubmit)="onSubmit()">
+      <!-- <legend>{{ formTitle }}</legend> -->
+      <div class="form-group">
+        <input
+          type="text"
+          [formControlName]="'id'"
+          class="form-control"
+          placeholder="Id"
+          aria-label="Id"
+        />
+      </div>
+      <div class="form-group">
+        <input
+          type="text"
+          [formControlName]="'name'"
+          class="form-control"
+          placeholder="Name"
+          aria-label="Name"
+        />
+      </div>
+      <div class="form-group">
+        <input
+          type="text"
+          [formControlName]="'latinName'"
+          class="form-control"
+          placeholder="Latin Name"
+          aria-label="Latin Name"
+        />
+      </div>
+      <div class="form-group">
+        <input
+          type="text"
+          [formControlName]="'imgUrl'"
+          class="form-control"
+          placeholder="Image URL"
+          aria-label="Image Url"
+          (blur)="onGettingImageUrl()"
+        />
+      </div>
+      <div class="form-group">
+        <textarea
+          type="number"
+          [formControlName]="'description'"
+          class="form-control"
+          placeholder="Description"
+          aria-label="Description"
+        ></textarea>
+      </div>
+      <button
+        [disabled]="!plantForm.valid"
+        type="submit"
+        class="btn btn-primary"
+      >
+        Add Plant
+      </button>
+    </form>
+  </div>
 </div>  

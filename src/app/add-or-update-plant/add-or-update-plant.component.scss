@@ -1,0 +1,43 @@
+.addPlant {
+  background-color: white;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+
+  .image,
+  .content {
+    width: calc(50%);
+  }
+
+  .content {
+    background-color: #FAF7F2;
+    min-height: calc(100vh - 219px);
+    padding: 0 20px;
+  }
+
+  .image {
+    padding: 20px;
+    background-color: rgb(235, 235, 235);
+    position: relative;
+  }
+
+  .imageHolder {
+    height: 500px;
+    width: 500px;
+    max-width: 90%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  h2 {
+    margin: 60px 0;
+  }
+
+  input,
+  textarea {
+    width: 80%;
+    max-width: 400px;
+  }
+}

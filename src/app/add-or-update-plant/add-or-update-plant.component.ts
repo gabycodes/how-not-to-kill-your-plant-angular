@@ -10,13 +10,9 @@ import { Router } from '@angular/router';
 })
 export class AddOrUpdatePlantComponent implements OnInit {
   plantForm: FormGroup;
+  hasImgUrl = false;
 
   constructor(private plantService: PlantsService, private router: Router) { }
-
-  Repdata = {}
-  errorMessage = ''
-  buttonValue = 'Save'
-  updatePlantValues = {}
 
   ngOnInit() {
     this.plantForm = new FormGroup({
@@ -24,11 +20,8 @@ export class AddOrUpdatePlantComponent implements OnInit {
       name: new FormControl(null, Validators.required),
       latinName: new FormControl(null, Validators.required),
       description: new FormControl(null, Validators.required),
-      imageUrl: new FormControl(null, Validators.required),
+      imgUrl: new FormControl(null, Validators.required),
     });
-
-    this.plantService.getPlant().subscribe(data => console.log(data))
-
   }
 
   onSubmit() {
@@ -36,7 +29,7 @@ export class AddOrUpdatePlantComponent implements OnInit {
       name,
       latinName,
       description,
-      imageUrl,
+      imgUrl,
       id
     } = this.plantForm.value;
 
@@ -44,27 +37,16 @@ export class AddOrUpdatePlantComponent implements OnInit {
       name,
       latinName,
       description,
-      imageUrl,
+      imgUrl,
       id
     }
-    console.log(this.plantForm.value)
-
-    console.log("adding plant");
-    // this.plantService.addPlant({ id, name, latinName, description, imageUrl }).subscribe();
 
     this.plantService.savePlant(plant).subscribe(data => {
-      alert(data)
-      this.ngOnInit()
-    }, error => this.errorMessage = error)
-    // this.router.navigate(['/search'])
+      this.router.navigateByUrl('/search');
+    }, error => console.log(error))
   }
 
-  updatePlant(values) {
-    this.updatePlantValues = { ...values }
-    this.buttonValue = 'Update'
+  onGettingImageUrl() {
+    this.plantForm.value.imgUrl !== '' ? this.hasImgUrl = true : this.hasImgUrl = false;
   }
-
-  // deletePlant(id) {
-  //   this.plantService.
-  // }
 }

@@ -60,3 +60,38 @@ h2 {
   font-size: 3.5rem;
   line-height: 4rem;
 }
+
+input,
+textarea {
+  font-size: 1.6rem;
+  padding: 12px 15px;
+  border: none;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.11);
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: rgb(145, 145, 145);
+}
+
+textarea {
+  margin-bottom: 10px;
+}
+
+button {
+  background-color: white;
+  font-size: 1.8rem;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 0px;
+  transition: all 0.1s ease-in;
+  margin: 15px 0;
+}
+
+button:hover,
+button:focus {
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}

@@ -3,5 +3,5 @@ export interface Plant {
   name: string,
   latinName: string,
   description: string,
-  imageUrl: string
+  imgUrl: string
 }

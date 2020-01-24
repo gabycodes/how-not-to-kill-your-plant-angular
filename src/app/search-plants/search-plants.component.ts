@@ -16,12 +16,17 @@ export class SearchPlantsComponent implements OnInit {
 
   ngOnInit() {
     this.plantService.getPlants().subscribe(plants => {
+      console.log(plants)
       this.plants = plants;
       this.filteredPlants = plants;
     })
   }
 
   onChange() {
-    this.filteredPlants = this.plants.filter(plant => plant.name.toLowerCase().includes(this.query.toLowerCase()))
+    this.filteredPlants = this.plants.filter(plant => {
+      if (plant.name.toLowerCase().includes(this.query.toLowerCase()) || plant.latinName.toLowerCase().includes(this.query.toLowerCase())) {
+        return true
+      }
+    })
   }
 }
